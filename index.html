@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SKELETON </title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: 'Courier New', Courier, monospace;
+      overflow-x: hidden;
+      margin: 0;
+    }
+    .menu-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      background: none;
+      border: 2px solid #00ff00;
+      color: #00ff00;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .menu-bar {
+      position: fixed;
+      left: -200px;
+      top: 0;
+      width: 200px;
+      height: 100vh;
+      background-color: rgba(0, 255, 0, 0.1);
+      transition: left 0.3s ease;
+      padding: 20px;
+    }
+    .menu-bar.show {
+      left: 0;
+    }
+    .menu-bar a {
+      display: block;
+      margin: 20px 0;
+      color: #00ff00;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .title {
+      text-align: center;
+      margin-top: 80px;
+      font-size: 40px;
+      letter-spacing: 2px;
+    }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #00ff00;
+      margin: 20px auto;
+      display: block;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 10px #00ff00; }
+      to { box-shadow: 0 0 30px #00ff00; }
+    }
+    .description {
+      text-align: center;
+      padding: 20px;
+      white-space: pre-wrap;
+      font-size: 18px;
+      border: 1px solid #00ff00;
+      margin: 10px;
+      animation: typing 6s steps(80) 1;
+      overflow: hidden;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    .music-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: transparent;
+      color: #00ff00;
+      border: 2px solid #00ff00;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .socials {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .socials img {
+      width: 30px;
+      height: 30px;
+      margin: 0 10px;
+    }
+    .scrolling-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: black;
+      color: #00ff00;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .scrolling-footer p {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-text 10s linear infinite;
+    }
+    @keyframes scroll-text {
+    0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    .profile-img {
+  width: 40vw; /* instead of 150px */
+  max-width: 150px;
+  height: auto;
+}
+.menu-bar {
+  width: 80%;
+  max-width: 250px;
+}
+@media (max-width: 600px) {
+  .title {
+    font-size: 28px;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .menu-btn {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #000000 0%, #0a0a0a 100%);
+}
+
+.stars, .stars2, .stars3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+
+.stars {
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  animation: moveStars 60s linear infinite;
+}
+
+.stars2 {
+  background-image: url('https://www.transparenttextures.com/patterns/green-dust-and-scratches.png');
+  animation: moveStars 120s linear infinite;
+  opacity: 0.3;
+}
+
+.stars3 {
+  background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+  animation: moveStars 180s linear infinite;
+  opacity: 0.1;
+}
+
+@keyframes moveStars {
+from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+.heart-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.heart-btn {
+  background: #00ff00;
+  color: black;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+  animation: beat 1s infinite;
+  transition: transform 0.2s;
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+
+  </style>
+</head>
+<body>
+    <div class="background-animation">
+  <div class="stars"></div>
+  <div class="stars2"></div>
+  <div class="stars3"></div>
+</div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <button class="menu-btn" onclick="toggleMenu()">☰ MENU</button>
+
+  <div class="menu-bar" id="menuBar">
+    <a href="#">Contact Us</a>
+    <a href="#">About</a>
+    <a href="https://wa.me/27618022967" target="_blank">skeleton</a>
+  </div>
+
+  <div class="title">𝐒𝐊𝐄𝐋𝐄𝐓𝐎𝐍</div>
+  <img src="profile.jpg" alt="Profile" class="profile-img">
+
+  <div class="description">
+    𝙸'𝙼 𝙰 𝚈𝙾𝚄𝙽𝙶 𝟷𝟺𝚈𝚁 𝙾𝙻𝙳 𝚆𝙷𝙸𝚃𝙴 𝙷𝙰𝚃 𝙷𝙰𝙲𝙺𝙴𝚁.𝙸𝙼 𝚂𝚃𝙸𝙻𝙻 𝙳𝙾𝙸𝙽𝙶 𝙷𝚃𝙼𝙻 𝙰𝙽𝙳 𝙲𝙲𝚂.𝙸'𝙼 𝙵𝙾𝚁𝚆𝙰𝚁𝙳 𝙻𝙾𝙾𝙺𝙸𝙽𝙶 𝙵𝙾𝚁 𝙲𝙾𝙻𝙻𝙰𝙱𝙾𝚁𝙰𝚃𝙸𝙾𝙽 𝙸𝙽 𝙵𝚁𝙴𝙴𝙽𝙴𝚃 𝙰𝙽𝙳 𝚂𝙾𝙵𝚃𝚆𝙰𝚁𝙴 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙼𝙴𝙽𝚃.
+  </div>
+
+  <button class="music-button" onclick="toggleMusic()">Music</button>
+
+  <audio id="musicPlayer" loop>
+    <source src="https://files.catbox.moe/x8oanq.mp3" type="audio/mpeg">
+    <source src="song2.mp3" type="audio/mpeg">
+    <source src="song3.mp3" type="audio/mpeg">
+    <source src="song4.mp3" type="audio/mpeg">
+    <source src="song5.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="socials">
+ <div style="display: flex; gap: 15px; margin-top: 20px;">
+  <a href="https://facebook.com" target="_blank">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" width="30" height="30" style="filter: invert(75%) sepia(100%) saturate(500%) hue-rotate(80deg);" />
+  </a>
+  <a href="https://twitter.com" target="_blank">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" width="30" height="30" style="filter: invert(75%) sepia(100%) saturate(500%) hue-rotate(80deg);" />
+  </a>
+  <a href="https://instagram.com" target="_blank">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" width="30" height="30" style="filter: invert(75%) sepia(100%) saturate(500%) hue-rotate(80deg);" />
+  </a>
+  <a href="https://github.com" target="_blank">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" width="30" height="30" style="filter: invert(75%) sepia(100%) saturate(500%) hue-rotate(80deg);" />
+  </a>
+  <a href="https://linkedin.com" target="_blank">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" width="30" height="30" style="filter: invert(75%) sepia(100%) saturate(500%) hue-rotate(80deg);" />
+  </a>
+  <a href="https://youtube.com" target="_blank">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" width="30" height="30" style="filter: invert(75%) sepia(100%) saturate(500%) hue-rotate(80deg);" />
+  </a>
+</div>
+
+      </div>
+
+  <div class="scrolling-footer"><p>𝐒𝐊𝐄𝐋𝐄𝐓𝐎𝐍 𝐓𝐄𝐂𝐇</p></div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menuBar');
+      menu.classList.toggle('show');
+    }
+    function toggleMusic() {
+      const player = document.getElementById('musicPlayer');
+      if (player.paused) {
+        player.play();
+      } else {
+        player.pause();
+      }
+    }
+  </script>
+<div class="heart-buttons">
+  <a href="https://whatsapp.com/channel/0029Vb67OyP4CrfcgoH21n3A" target="_blank" class="heart-btn">WhatsApp Group</a>
+  <a href="https://t.me/YOURCHANNEL" target="_blank" class="heart-btn">Channel</a>
+</div>
+</body>
+</html>
